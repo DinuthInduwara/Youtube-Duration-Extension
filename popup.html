@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>YouTube Progress</h1>
+        </div>
+
+        <div id="noVideo" class="no-video">
+            <p>No YouTube video detected</p>
+            <p class="hint">Play a YouTube video to see progress</p>
+        </div>
+
+        <div id="videoInfo" class="video-info hidden">
+            <div class="progress-circle">
+                <svg width="80" height="80" viewBox="0 0 120 120">
+                    <circle class="progress-bg" cx="60" cy="60" r="54" stroke-width="8"></circle>
+                    <circle class="progress-fill" cx="60" cy="60" r="54" stroke-width="8" stroke-dasharray="339.292"
+                        stroke-dashoffset="0"></circle>
+                    <text class="progress-text" x="60" y="65" text-anchor="middle">0%</text>
+                </svg>
+            </div>
+
+            <div class="video-details">
+                <h2 id="videoTitle" class="video-title">Video Title</h2>
+                <p id="channelName" class="channel-name">Channel Name</p>
+            </div>
+
+            <div class="progress-section">
+                <div class="progress-bar">
+                    <div class="progress-fill-bar"></div>
+                </div>
+
+                <div class="time-grid">
+                    <div class="time-item">
+                        <span class="time-label">Elapsed:</span>
+                        <span id="elapsedTime" class="time-value">00:00:00</span>
+                    </div>
+                    <div class="time-item">
+                        <span class="time-label">Remaining:</span>
+                        <span id="remainingTime" class="time-value">00:00:00</span>
+                    </div>
+                    <div class="time-item">
+                        <span class="time-label">Total:</span>
+                        <span id="totalDuration" class="time-value">00:00:00</span>
+                    </div>
+                    <div class="time-item">
+                        <span class="time-label">At Current Speed:</span>
+                        <span id="remainingAtSpeed" class="time-value">00:00:00</span>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-label">Progress:</span>
+                        <span id="progressPercent" class="stat-value">0%</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Speed:</span>
+                        <span id="playbackSpeed" class="stat-value">1x</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
