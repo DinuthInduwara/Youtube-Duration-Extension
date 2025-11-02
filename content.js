@@ -2,7 +2,6 @@ let lastVideoData = null;
 
 // Extract video title from YouTube page
 function getVideoTitle() {
-    // Try multiple selectors for video title
     const selectors = [
         'h1.ytd-watch-metadata yt-formatted-string',
         '.title.style-scope.ytd-video-primary-info-renderer',
@@ -66,7 +65,7 @@ function getVideoData() {
     };
 }
 
-// Listen for messages from popup
+// Listen for messages from popup or background script
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === 'getVideoData') {
         const videoData = getVideoData();
